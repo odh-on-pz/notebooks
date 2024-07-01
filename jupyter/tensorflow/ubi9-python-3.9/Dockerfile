@@ -15,7 +15,20 @@ COPY utils ./utils/
 # Install Python packages and Jupyterlab extensions from Pipfile.lock
 COPY Pipfile.lock ./
 
-RUN echo "Installing softwares and packages" && micropipenv install && rm -f ./Pipfile.lock
+# Switch to root user
+USER root
+
+# Update and refresh package repositories, and install EPEL release
+RUN dnf update -y && \
+    dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm && \
+    dnf install -y hdf5-devel
+
+RUN echo "Installing softwares and packages" && \
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y &&\
+    source "$HOME/.cargo/env" && \
+    GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=true PIP_CONSTRAINT=/etc/constraints.txt micropipenv install && \
+    rm -f ./Pipfile.lock && \
+    rustup self uninstall -y
 
 # Temporary:Workaround for fixing the kfp-kubernetes 1.0.0 for elyra pipeline execution
 # TODO: Remove this patch once the issue is fixed with kfp-kubernetes upgrade.
