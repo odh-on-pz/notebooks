@@ -34,12 +34,6 @@ if [[ "$ARCH" == "amd64" || "$ARCH" == "arm64" ||"$ARCH" == "ppc64le" ]]; then
 	. /opt/rh/gcc-toolset-13/enable
 
 	# build libxkbfile
-	export UTIL_MACROS_VERSION=1.20.2
-	curl -L https://www.x.org/releases/individual/util/util-macros-${UTIL_MACROS_VERSION}.tar.gz | tar xz
-	cd util-macros-${UTIL_MACROS_VERSION}/
-	./configure --prefix=/usr && make install -j ${MAX_JOBS}
-	cd .. && rm -rf util-macros-${UTIL_MACROS_VERSION}/
-
 	export X_KB_FILE_VERSION=1.1.3
 	curl -L https://www.x.org/releases/individual/lib/libxkbfile-${X_KB_FILE_VERSION}.tar.gz | tar xz
 	cd libxkbfile-${X_KB_FILE_VERSION}/
