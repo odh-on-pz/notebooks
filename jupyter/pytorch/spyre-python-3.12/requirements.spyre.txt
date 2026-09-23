@@ -1,0 +1,41 @@
+# Spyre PyTorch notebook requirements
+# Install PyTorch, JupyterLab, and Elyra from PyPI
+# These packages are installed via pip at image build time from the Spyre base image
+
+# PyTorch (CPU/Spyre variant — accelerator support provided by the base image)
+torch
+torchvision
+torch-sendnn
+transformers
+
+# JupyterLab
+jupyterlab>=4.0
+jupyterlab-server>=2.0
+jupyter-server>=2.0
+notebook
+
+# Elyra pipeline editor
+odh-elyra
+
+# Kernel
+ipykernel
+ipywidgets
+
+# Notebook utilities
+nbconvert
+nbformat
+nbclient
+#jupyter-resource-usage
+
+# Data science essentials
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+
+# Package utilities
+wheel
+setuptools<82.0.0
+#micropipenv[toml]
+uv

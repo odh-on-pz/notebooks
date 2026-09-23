@@ -223,6 +223,10 @@ cuda-jupyter-pytorch-ubi9-python-$(RELEASE_PYTHON_VERSION):
 cuda-jupyter-pytorch-llmcompressor-ubi9-python-$(RELEASE_PYTHON_VERSION):
 	$(call image,$@,jupyter/pytorch+llmcompressor/ubi9-python-$(RELEASE_PYTHON_VERSION)/Dockerfile.konflux.cuda)
 
+.PHONY: spyre-jupyter-pytorch-python-$(RELEASE_PYTHON_VERSION)
+spyre-jupyter-pytorch-python-$(RELEASE_PYTHON_VERSION):
+	$(call image,$@,jupyter/pytorch/spyre-python-$(RELEASE_PYTHON_VERSION)/Dockerfile.spyre)
+
 .PHONY: jupyter-trustyai-ubi9-python-$(RELEASE_PYTHON_VERSION)
 jupyter-trustyai-ubi9-python-$(RELEASE_PYTHON_VERSION):
 	$(call image,$@,jupyter/trustyai/ubi9-python-$(RELEASE_PYTHON_VERSION)/Dockerfile.konflux.cpu)
@@ -669,7 +673,8 @@ all-images: \
 	rocm-jupyter-tensorflow-ubi9-python-$(RELEASE_PYTHON_VERSION) \
 	jupyter-baseline-ubi9-python-$(RELEASE_PYTHON_VERSION) \
 	codeserver-baseline-ubi9-python-$(RELEASE_PYTHON_VERSION) \
-	runtime-baseline-ubi9-python-$(RELEASE_PYTHON_VERSION)
+	runtime-baseline-ubi9-python-$(RELEASE_PYTHON_VERSION) \
+	spyre-jupyter-pytorch-python-$(RELEASE_PYTHON_VERSION)
 else
 	$(error Invalid Python version $(RELEASE_PYTHON_VERSION))
 endif

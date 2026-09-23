@@ -16,6 +16,7 @@ resources:
   - jupyter-rocm-pytorch-notebook-imagestream.yaml
   - jupyter-rocm-tensorflow-notebook-imagestream.yaml
   - jupyter-pytorch-llmcompressor-imagestream.yaml
+  - jupyter-pytorch-spyre-notebook-imagestream.yaml
   - runtime-datascience-imagestream.yaml
   - runtime-baseline-imagestream.yaml
   - runtime-minimal-imagestream.yaml
@@ -796,4 +797,17 @@ replacements:
           group: image.openshift.io
           kind: ImageStream
           name: runtime-baseline
+          version: v1
+  - source:
+      fieldPath: data.odh-workbench-jupyter-pytorch-spyre-py312-ubi9-n
+      kind: ConfigMap
+      name: notebook-image-params
+      version: v1
+    targets:
+      - fieldPaths:
+          - spec.tags.1.from.name
+        select:
+          group: image.openshift.io
+          kind: ImageStream
+          name: jupyter-pytorch-spyre-notebook
           version: v1
