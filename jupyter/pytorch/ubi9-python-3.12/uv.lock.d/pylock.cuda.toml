@@ -2061,9 +2061,3 @@ name = "zipp"
 version = "4.1.0"
 marker = "python_full_version == '3.12.*' and implementation_name == 'cpython' and sys_platform == 'linux'"
 wheels = [{ url = "https://packages.redhat.com/api/pulp-content/public-rhai/rhoai/3.6/cuda13.0-ubi9-test/zipp-4.1.0-1-py3-none-any.whl", upload-time = 2026-09-16T12:23:52Z, size = 11873, hashes = { sha256 = "b654f3ce6b4af981607a6f83020dfec67eec8376bce65ccdf47ddf5af5850fda" } }]
-
-# The following packages were excluded from the output:
-# odh-notebooks-meta-db-connectors-deps
-# odh-notebooks-meta-jupyterlab-datascience-deps
-# odh-notebooks-meta-jupyterlab-deps
-# odh-notebooks-meta-workbench-datascience-deps

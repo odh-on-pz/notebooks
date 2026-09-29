@@ -30,48 +30,14 @@ spec:
             {"name": "JupyterLab", "version": "4.x"},
             {"name": "PyTorch", "version": "2.x"},
             {"name": "Numpy", "version": "2.x"},
-            {"name": "Pandas", "version": "2.x"},
-            {"name": "Scikit-learn", "version": "1.x"},
-            {"name": "Scipy", "version": "1.x"},
             {"name": "Odh-Elyra", "version": "5.x"},
-            {"name": "Matplotlib", "version": "3.x"}
           ]
-        openshift.io/imported-from: quay.io/opendatahub/odh-workbench-jupyter-pytorch-spyre-py312
+        openshift.io/imported-from: quay.io/opendatahub/odh-workbench-jupyter-pytorch-spyre-py312-ubi9
         opendatahub.io/workbench-image-recommended: 'true'
-        opendatahub.io/notebook-build-commit: odh-workbench-jupyter-pytorch-spyre-py312-commit-n_PLACEHOLDER
+        opendatahub.io/notebook-build-commit: odh-workbench-jupyter-pytorch-spyre-py312-ubi9-commit-n_PLACEHOLDER
       from:
         kind: DockerImage
-        name: odh-workbench-jupyter-pytorch-spyre-py312-n_PLACEHOLDER
+        name: odh-workbench-jupyter-pytorch-spyre-py312-ubi9-n_PLACEHOLDER
       name: "3.6"
-      referencePolicy:
-        type: Source
-    # N - 1 Version of the image
-    - annotations:
-        # language=json
-        opendatahub.io/notebook-software: |
-          [
-            {"name": "Spyre", "version": "latest"},
-            {"name": "Python", "version": "v3.12"},
-            {"name": "PyTorch", "version": "2.x"}
-          ]
-        # language=json
-        opendatahub.io/notebook-python-dependencies: |
-          [
-            {"name": "JupyterLab", "version": "4.x"},
-            {"name": "PyTorch", "version": "2.x"},
-            {"name": "Numpy", "version": "2.x"},
-            {"name": "Pandas", "version": "2.x"},
-            {"name": "Scikit-learn", "version": "1.x"},
-            {"name": "Scipy", "version": "1.x"},
-            {"name": "Odh-Elyra", "version": "5.x"},
-            {"name": "Matplotlib", "version": "3.x"}
-          ]
-        openshift.io/imported-from: quay.io/opendatahub/odh-workbench-jupyter-pytorch-spyre-py312
-        opendatahub.io/workbench-image-recommended: 'false'
-        opendatahub.io/notebook-build-commit: odh-workbench-jupyter-pytorch-spyre-py312-commit-3-5_PLACEHOLDER
-      from:
-        kind: DockerImage
-        name: odh-workbench-jupyter-pytorch-spyre-py312-3-5_PLACEHOLDER
-      name: "3.5"
       referencePolicy:
         type: Source
