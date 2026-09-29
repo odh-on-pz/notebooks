@@ -225,7 +225,7 @@ cuda-jupyter-pytorch-llmcompressor-ubi9-python-$(RELEASE_PYTHON_VERSION):
 
 .PHONY: spyre-jupyter-pytorch-python-$(RELEASE_PYTHON_VERSION)
 spyre-jupyter-pytorch-python-$(RELEASE_PYTHON_VERSION):
-	$(call image,$@,jupyter/pytorch/spyre-python-$(RELEASE_PYTHON_VERSION)/Dockerfile.spyre)
+	$(call image,$@,jupyter/pytorch/spyre-python-$(RELEASE_PYTHON_VERSION)/Dockerfile.konflux.spyre)
 
 .PHONY: jupyter-trustyai-ubi9-python-$(RELEASE_PYTHON_VERSION)
 jupyter-trustyai-ubi9-python-$(RELEASE_PYTHON_VERSION):

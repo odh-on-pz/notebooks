@@ -92,8 +92,9 @@ def local_buildinputs(
         subprocess.check_call([MAKE, "bin/buildinputs"], cwd=ROOT_DIR)
     if not build_args:
         build_args = {}
+    print("***********************Platform: ", platform)
     stdout = subprocess.check_output(
-        [ROOT_DIR / "bin/buildinputs", *[f"-build-arg={k}={v}" for k, v in build_args.items()], str(dockerfile)],
+        [ROOT_DIR / "bin/buildinputs", *[f"--build-arg={k}={v}" for k, v in build_args.items()], str(dockerfile)],
         text=True,
         cwd=ROOT_DIR,
         env={**os.environ, "TARGETPLATFORM": platform},
